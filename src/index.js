@@ -78,7 +78,9 @@ const Board = () => {
   }
 
   const winner = calculateWinner(squares);
-  const status = winner ? `Winner: ${winner}` : `Next Player: ${xIsNext ? 'X' : 'O'}`;
+  const check = checkSquares(squares);
+  const status = winner ? `Winner: ${winner}` : (check ? `Game Over !` : `Next Player: ${xIsNext ? 'X' : 'O'}`);
+  
 
   return (
     <div style={{
@@ -96,7 +98,7 @@ const Board = () => {
       <div className="board-row">
         {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
       </div>
-      {winner ? reset() : null}
+      {winner || check ? reset() : null}
     </div>
   )
 }
@@ -130,4 +132,13 @@ function calculateWinner(squares){
     }
   }
   return null;
+}
+
+function checkSquares(squares){
+  for (var i=0; i<squares.length;i++){
+    if(squares[i] == null){
+      return false;
+    }
+  }
+  return true;
 }

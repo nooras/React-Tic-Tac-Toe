@@ -7,3 +7,15 @@ React
 ### Deployed on netlify
 https://react-tic-tac-toe-nooras.netlify.app/
 
+
+### Steps
+
+- First Player needs to click on any empty place. X will be appear on screen.
+- Second Player need to click on any empty place. O will be appear on screen.
+- Player who make make Symbols in a row, whether its horizontal, vertical and diagonal, has won the game.
+
+### Features
+
+- System will tell player who will play next(Whether its X player turn or O Player Turn.)
+- Reset button will be shown when any player wins or when game will be over.
+
